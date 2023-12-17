@@ -54,7 +54,7 @@ body {
 }
 
 .mole {
-   background-image: url(./picture.jpg);
+   background-image: url(../assts/picture.jpg);
    background-size: cover;
 }
 .mole:active {
