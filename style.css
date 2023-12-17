@@ -21,6 +21,7 @@ body {
    margin: 1em auto;
    border-radius: 1em;
    color: #fff;
+   justify-content: center;
 }
 
 #game-header {
@@ -37,7 +38,7 @@ body {
    height: 380px;
    display: flex;
    flex-wrap: wrap;
-   gap: 8px;
+   gap: 6px;
 }
 
 .square {
@@ -115,16 +116,14 @@ button:active {
       width: 100%;  
       padding: 2em;
    }
+   
    #gamebody {
-      width: 320px;
-      height: 320px;
-      gap: 6px;
+      width: 325px;
+      height: 325px;
    }
-
    .square {
       width: 100px;
       height: 100px;
-      
    }
 }
 
