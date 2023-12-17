@@ -20,7 +20,7 @@ gameButton.classList.add('start-button')
 let timerId = null
 let userPoint = 0
 let randomHittingSquare 
-let fixedTime = 50
+let fixedTime = 5
 let gameTime = fixedTime
 let autoTimeLeft = null
 
@@ -41,7 +41,8 @@ function selectingSquareForMole() {
    let randomSquare = squares[Math.floor(Math.random() * squares.length)]
    randomSquare.classList.add('mole')
    randomHittingSquare = randomSquare.id
-   console.log(randomSquare) // each time randomSquare provide a random mole
+   console.log(randomSquare) 
+   // each time randomSquare provide a random mole
  
 }
 
@@ -77,7 +78,10 @@ function timeLeftGameEnds() {
 
 // this method is invoke each time other methods
 function gameStarting() {
-   buttonContainer.removeChild(gameButton) // when the game is started start button will removed
+
+   buttonContainer.removeChild(gameButton) 
+   // when the game is started start button will removed
    timerId = setInterval(selectingSquareForMole, 800)
    autoTimeLeft = setInterval(timeLeftGameEnds, 1000)
+
 }

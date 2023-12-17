@@ -12,7 +12,7 @@ body {
 
 #game-container {
    max-width: 850px;
-   width: 80%;
+   width: 90%;
    height: 550px;
    display: flex;
    flex-direction: column;
@@ -22,6 +22,8 @@ body {
    border-radius: 1em;
    color: #fff;
    justify-content: center;
+   border: 1px solid #fff;
+   align-items: center;
 }
 
 #game-header {
@@ -30,6 +32,7 @@ body {
    display: flex;
    justify-content: center;
    gap: 3.5em;
+   border: 1px solid #fff;
 }
 
 #game-body {
@@ -38,7 +41,10 @@ body {
    height: 380px;
    display: flex;
    flex-wrap: wrap;
-   gap: 6px;
+   justify-content: center;
+   align-items: center;
+   gap: 6px
+   ;
 }
 
 .square {
@@ -118,12 +124,14 @@ button:active {
    }
    
    #game-body {
-      width: 325px;
-      height: 325px;
+      width: 330px;
+      height: 330px;
+      width: 100%;
    }
    .square {
-      width: 100px;
-      height: 100px;
+      width: 90px;
+      height: 90px;
+      margin: 0 3px;
    }
 }
 
