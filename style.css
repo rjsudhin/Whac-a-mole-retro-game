@@ -1,0 +1,130 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+   width: 100%;
+   background-color: #252525;
+}
+
+#game-container {
+   max-width: 850px;
+   width: 80%;
+   height: 550px;
+   display: flex;
+   flex-direction: column;
+   background-color: transparent;
+   padding: 1em 0;
+   margin: 1em auto;
+   border-radius: 1em;
+   color: #fff;
+}
+
+#game-header {
+   margin: 1em 0 0;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   gap: 3.5em;
+}
+
+#gamebody {
+   margin: 1.5em auto;
+   width: 380px;
+   height: 380px;
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px;
+}
+
+.square {
+   width: 120px;
+   height: 120px;
+   border: none;
+   box-shadow: 0 0 10px 3px #161515;
+   border-radius: 1em;
+}
+
+.square:hover {
+   box-shadow: 0 0 10px 3px rgb(201, 9, 34);
+}
+
+.mole {
+   background-image: url(./picture.jpg);
+   background-size: cover;
+}
+.mole:active {
+   box-shadow: 0 0 10px 5px rgb(44, 182, 9);
+}
+
+#button-container {
+   width: 100%;
+   display: flex;
+   justify-content: space-around;
+}
+
+button {
+   max-width: 450px;
+   width: 30%;
+   height: 3em;
+   align-self: center;
+   border-radius: 2em;
+}
+
+.start-button {
+   background-color: #20d8e2;
+   
+   border: none;
+}
+
+.start-button:hover {
+   box-shadow: 0 0 30px 3px #20d8e2;
+}
+
+button:hover {
+   cursor: pointer;
+}
+
+button:active {
+   background-color: rgb(34, 211, 93);
+   font-weight: bold;
+   color: #fff;
+}
+
+.restart-button {
+   background-color: rgb(223, 113, 23);
+
+   border: none;
+}
+
+.restart-button:hover {
+   box-shadow: 0 0 30px 3px rgb(223, 113, 23);
+}
+
+.restart-button:active {
+   background-color: rgb(34, 211, 93);
+   font-weight: bold;
+   color: #fff;
+}
+
+@media (max-width: 500px) {
+   #game-container {
+      width: 100%;  
+      padding: 2em;
+   }
+   #gamebody {
+      width: 320px;
+      height: 320px;
+      gap: 6px;
+   }
+
+   .square {
+      width: 100px;
+      height: 100px;
+      
+   }
+}
+
