@@ -3,7 +3,7 @@ const gameHeader = document.querySelector('#game-header')
 // game display contents 
 const scoreDisplay = document.querySelector('#score')
 const timeLeft = document.querySelector('#time-left')
-const gameBody = document.querySelector('#gamebody')
+const gameBody = document.querySelector('#game-body')
 const mole = document.querySelector('.mole')
 const buttonContainer = document.querySelector('#button-container')
 
@@ -20,7 +20,7 @@ gameButton.classList.add('start-button')
 let timerId = null
 let userPoint = 0
 let randomHittingSquare 
-let fixedTime = 10
+let fixedTime = 50
 let gameTime = fixedTime
 let autoTimeLeft = null
 

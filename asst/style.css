@@ -32,7 +32,7 @@ body {
    gap: 3.5em;
 }
 
-#gamebody {
+#game-body {
    margin: 1.5em auto;
    width: 380px;
    height: 380px;
@@ -54,7 +54,7 @@ body {
 }
 
 .mole {
-   background-image: url(../assts/picture.jpg);
+   background-image: url(../asst/picture.jpg);
    background-size: cover;
 }
 .mole:active {
@@ -117,7 +117,7 @@ button:active {
       padding: 2em;
    }
    
-   #gamebody {
+   #game-body {
       width: 325px;
       height: 325px;
    }
