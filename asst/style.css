@@ -116,6 +116,7 @@ button:active {
 }
 
 @media (max-width: 500px) {
+   
    #game-container {
       width: 100%;  
       padding: 2em;
