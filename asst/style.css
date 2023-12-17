@@ -22,7 +22,6 @@ body {
    border-radius: 1em;
    color: #fff;
    justify-content: center;
-   border: 1px solid #fff;
    align-items: center;
 }
 
@@ -32,7 +31,6 @@ body {
    display: flex;
    justify-content: center;
    gap: 3.5em;
-   border: 1px solid #fff;
 }
 
 #game-body {
