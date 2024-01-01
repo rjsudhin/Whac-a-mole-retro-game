@@ -47,6 +47,8 @@ function resetGame() {
    gameMaxTime = maxTime
    timeLeft.textContent = 'over'
    
+   
+
 }
 
 
@@ -75,7 +77,7 @@ function gamesMoveAuto() {
 startButton.addEventListener('mousedown', event => {
    if (gameScore > 0) {
       gameScore = 0
-      scoreDisplay.textContent = 'score starting here'
+      scoreDisplay.textContent = 'Oppz..!'
    }
    gamesMoveAuto()
 })
