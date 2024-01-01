@@ -1,87 +1,63 @@
+// game containers
 const gameContainer = document.querySelector('#game-container')
-const gameHeader = document.querySelector('#game-header')
-// game display contents 
-const scoreDisplay = document.querySelector('#score')
-const timeLeft = document.querySelector('#time-left')
 const gameBody = document.querySelector('#game-body')
-const mole = document.querySelector('.mole')
 const buttonContainer = document.querySelector('#button-container')
 
+// game display 
+let gameMaxTime = 10
+let gameScore = 0
+let timeLeft = document.querySelector('#time-left')
+let scoreDisplay = document.querySelector('#score')
 
+// boxes button
+const gameBoxes = gameBody.querySelectorAll('.square')
+const startButton = document.querySelector('#start-btn')
 
-//get squares 
-const squares = document.querySelectorAll('.square')
-// game start button 
-const gameButton = document.querySelector('button')
-gameButton.classList.add('start-button')
-
-
-// game load things 
+// moving
 let timerId = null
-let userPoint = 0
-let randomHittingSquare 
-let fixedTime = 5
-let gameTime = fixedTime
-let autoTimeLeft = null
+let autoTimer = null
 
-
-gameButton.addEventListener('click', () => {
-   if (userPoint > 0) {
-      userPoint = 0
-   }
-   gameStarting()
-}) 
-
-// this function is select a random square and add the mole class
-function selectingSquareForMole() {
-   squares.forEach(square => {
-      square.classList.remove('mole')
+// get random square and move the image
+function randomSquareSelection() {
+   // when the game start remove mole class from default square
+   gameBoxes.forEach(gameBox => {
+      gameBox.classList.remove('mole')
    })
-
-   let randomSquare = squares[Math.floor(Math.random() * squares.length)]
+   let randomSquare = gameBoxes[Math.floor(Math.random() * gameBoxes.length)]
+   console.log('test passed \n', randomSquare)
    randomSquare.classList.add('mole')
-   randomHittingSquare = randomSquare.id
-   console.log(randomSquare) 
-   // each time randomSquare provide a random mole
- 
 }
 
-// when click the random mole square the user increased their points
 
-squares.forEach(square=> {
-   square.addEventListener('mousedown', () => {
-      if (square.id == randomHittingSquare) {
-         userPoint++
-         scoreDisplay.textContent = userPoint
-         console.log('this is passed')
-      }
+// add points
+
+
+function autoTimerLeft() {
+   gameMaxTime--
+   timeLeft.textContent = gameMaxTime
+   if (gameMaxTime == 0) {
+      clearInterval(timerId)
+      clearInterval(autoTimer)
+      
+      console.log('game ends')
+   }
+}
+
+function gamesMoveAuto() {
+   timerId = setInterval(randomSquareSelection, 500)
+   autoTimer = setInterval(autoTimerLeft, 1000)
+}
+
+startButton.addEventListener('mousedown', event => {
+   gamesMoveAuto()
+   gameBoxes.forEach(gameBox => {
+      gameBox.addEventListener('mousedown', event => {
+         if (gameBox.classList.contains('mole')) {
+            gameScore++
+            scoreDisplay.textContent = gameScore
+            console.log('point increased')
+         }
+      })
    })
 })
 
-function timeLeftGameEnds() {
-   
-   gameTime--
-   timeLeft.textContent = gameTime
-   if (gameTime == 0) {
-      clearInterval(timerId)
-      clearInterval(autoTimeLeft)
-
-      scoreDisplay.textContent = ''
-      buttonContainer.appendChild(gameButton)
-      gameButton.classList.remove('start-button')
-      gameButton.textContent = 'Restart'
-      gameButton.classList.add('restart-button')
-      gameTime = fixedTime
-   }
-   
-}
-
-// this method is invoke each time other methods
-function gameStarting() {
-
-   buttonContainer.removeChild(gameButton) 
-   // when the game is started start button will removed
-   timerId = setInterval(selectingSquareForMole, 800)
-   autoTimeLeft = setInterval(timeLeftGameEnds, 1000)
-
-}
