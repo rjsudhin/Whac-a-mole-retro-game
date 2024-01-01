@@ -7,6 +7,7 @@ const buttonContainer = document.querySelector('#button-container')
 let maxTime = 10
 let gameMaxTime = maxTime
 let gameScore = 0
+let displayCurrentScore
 let timeLeft = document.querySelector('#time-left')
 let scoreDisplay = document.querySelector('#score')
 
@@ -47,13 +48,22 @@ function makingResetGame() {
    newGameMessage.setAttribute('id', 'reset-game-box')
    gameBody.replaceWith(newGameMessage)
 
+   // game ends text
    let newGameText = document.createElement('p')
    newGameText.classList.add('new-game-text')
    newGameText.textContent = 'Game ends'
 
+   //new game button
    let resetButton = document.createElement('button')
    resetButton.textContent = 'new Game'
-   newGameMessage.append(newGameText, resetButton)
+
+   // player scored points
+   let pointText = document.createElement('p')
+   pointText.textContent = `You are scored ${displayCurrentScore}`
+
+   //player score, game end message, and new game button 
+   // added on newGameMessage dialogue box
+   newGameMessage.append(pointText, newGameText, resetButton)
 
    resetButton.addEventListener('mousedown', event => {
       newGameMessage.replaceWith(gameBody)
@@ -62,6 +72,7 @@ function makingResetGame() {
 }
 
 function resetGame() {
+   displayCurrentScore = gameScore
    gameScore = 0
    scoreDisplay.textContent = gameScore
    gameMaxTime = maxTime
