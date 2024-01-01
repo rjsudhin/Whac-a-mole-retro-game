@@ -108,7 +108,6 @@ function gamesMoveAuto() {
 startButton.addEventListener('mousedown', event => {
    if (gameScore > 0) {
       gameScore = 0
-      scoreDisplay.textContent = 'Oppz..!'
    }
    gamesMoveAuto()
    buttonContainer.removeChild(startButton)

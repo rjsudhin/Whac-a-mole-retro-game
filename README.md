@@ -1,4 +1,4 @@
-Whac mole is tertro game 
+Whac mole is Rertro game 
 
 i am build this project in to scratch 
 now game has dark UI with nice userinterface
