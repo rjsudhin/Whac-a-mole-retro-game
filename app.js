@@ -4,7 +4,7 @@ const gameBody = document.querySelector('#game-body')
 const buttonContainer = document.querySelector('#button-container')
 
 // game display 
-let maxTime = 30
+let maxTime = 10
 let gameMaxTime = maxTime
 let gameScore = 0
 let timeLeft = document.querySelector('#time-left')
@@ -41,14 +41,34 @@ gameBoxes.forEach(gameBox => {
    })
 })
 
+// making new game dialogue box
+function makingResetGame() {
+   let newGameMessage = document.createElement('div')
+   newGameMessage.setAttribute('id', 'reset-game-box')
+   gameBody.replaceWith(newGameMessage)
+
+   let newGameText = document.createElement('p')
+   newGameText.classList.add('new-game-text')
+   newGameText.textContent = 'Game ends'
+
+   let resetButton = document.createElement('button')
+   resetButton.textContent = 'new Game'
+   newGameMessage.append(newGameText, resetButton)
+
+   resetButton.addEventListener('mousedown', event => {
+      newGameMessage.replaceWith(gameBody)
+      buttonContainer.append(startButton)
+   })
+}
+
 function resetGame() {
    gameScore = 0
    scoreDisplay.textContent = gameScore
    gameMaxTime = maxTime
    timeLeft.textContent = 'over'
    
-
-
+   // when the game ends show a confirmation to new game
+   makingResetGame()
 }
 
 
@@ -80,5 +100,6 @@ startButton.addEventListener('mousedown', event => {
       scoreDisplay.textContent = 'Oppz..!'
    }
    gamesMoveAuto()
+   buttonContainer.removeChild(startButton)
 })
 

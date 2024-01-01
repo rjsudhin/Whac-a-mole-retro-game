@@ -48,8 +48,10 @@ body {
 #reset-game-box {
    width: 380px;
    height: 380px;
-   border: 1px solid #fff;
+   box-shadow: 0 0 25px 5px #161515;
    border-radius: 13px;
+   margin: 15px 0;
+   background-color: #161515;
 }
 
 .square {
