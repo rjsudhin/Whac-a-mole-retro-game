@@ -50,6 +50,7 @@ function scoreChanger(newBox, pointText) {
       let previousScore = userScores.shift()
       let previousScoreDisplay = document.createElement('p')
       previousScoreDisplay.textContent = `your previous game score ${previousScore}`
+      previousScoreDisplay.classList.add('game-point')
       newBox.insertBefore(previousScoreDisplay, pointText)
    }
 

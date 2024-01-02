@@ -59,6 +59,10 @@ body {
    align-items: center;
 }
 
+.game-point {
+   color: orange;
+}
+
 .square {
    width: 120px;
    height: 120px;
