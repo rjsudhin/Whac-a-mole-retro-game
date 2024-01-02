@@ -48,8 +48,9 @@ function scoreChanger(newBox, pointText) {
    userScores.push(displayCurrentScore)
    if (userScores.length >= 2) {
       let previousScore = userScores.shift()
+      pointText.textContent = `your current score : ${displayCurrentScore}`
       let previousScoreDisplay = document.createElement('p')
-      previousScoreDisplay.textContent = `your previous game score ${previousScore}`
+      previousScoreDisplay.textContent = `your previous game score : ${previousScore}`
       previousScoreDisplay.classList.add('game-point')
       newBox.insertBefore(previousScoreDisplay, pointText)
    }
@@ -73,7 +74,7 @@ function makingResetGame() {
 
    // player scored points
    let pointText = document.createElement('p')
-   pointText.textContent = `You are scored ${displayCurrentScore}`
+   pointText.textContent = `You are scored : ${displayCurrentScore}`
 
    //player score, game end message, and new game button 
    // added on newGameMessage dialogue box
@@ -84,6 +85,8 @@ function makingResetGame() {
    resetButton.addEventListener('mousedown', event => {
       newGameMessage.replaceWith(gameBody)
       buttonContainer.append(startButton)
+      scoreDisplay.textContent = ''
+      timeLeft.textContent = ''
    })
 }
 
@@ -92,7 +95,7 @@ function resetGame() {
    gameScore = 0
    scoreDisplay.textContent = gameScore
    gameMaxTime = maxTime
-   timeLeft.textContent = 'over'
+   timeLeft.textContent = 0
    
    // when the game ends show a confirmation to new game
    makingResetGame()
