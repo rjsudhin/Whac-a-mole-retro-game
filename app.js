@@ -8,6 +8,7 @@ let maxTime = 10
 let gameMaxTime = maxTime
 let gameScore = 0
 let displayCurrentScore
+const userScores = []
 let timeLeft = document.querySelector('#time-left')
 let scoreDisplay = document.querySelector('#score')
 
@@ -42,6 +43,17 @@ gameBoxes.forEach(gameBox => {
    })
 })
 
+function oldScoreNewScore(newBox) {
+   userScores.push(displayCurrentScore)
+   if (userScores.length >= 2) {
+      let previousScore = userScores.shift()
+      let previousScoreDisplay = document.createElement('p')
+      previousScoreDisplay.textContent = `your previous game score ${previousScore}`
+      newBox.append(previousScoreDisplay)
+   }
+
+}
+
 // making new game dialogue box
 function makingResetGame() {
    let newGameMessage = document.createElement('div')
@@ -64,6 +76,8 @@ function makingResetGame() {
    //player score, game end message, and new game button 
    // added on newGameMessage dialogue box
    newGameMessage.append(pointText, newGameText, resetButton)
+
+   oldScoreNewScore(newGameMessage)
 
    resetButton.addEventListener('mousedown', event => {
       newGameMessage.replaceWith(gameBody)
