@@ -43,13 +43,14 @@ gameBoxes.forEach(gameBox => {
    })
 })
 
-function oldScoreNewScore(newBox) {
+// change the older point to previous point and showing on display
+function scoreChanger(newBox, pointText) {
    userScores.push(displayCurrentScore)
    if (userScores.length >= 2) {
       let previousScore = userScores.shift()
       let previousScoreDisplay = document.createElement('p')
       previousScoreDisplay.textContent = `your previous game score ${previousScore}`
-      newBox.append(previousScoreDisplay)
+      newBox.insertBefore(previousScoreDisplay, pointText)
    }
 
 }
@@ -77,7 +78,7 @@ function makingResetGame() {
    // added on newGameMessage dialogue box
    newGameMessage.append(pointText, newGameText, resetButton)
 
-   oldScoreNewScore(newGameMessage)
+   scoreChanger(newGameMessage, pointText)
 
    resetButton.addEventListener('mousedown', event => {
       newGameMessage.replaceWith(gameBody)
