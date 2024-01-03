@@ -64,7 +64,7 @@ function makingResetGame() {
    gameBody.replaceWith(newGameMessage)
 
    // game ends text
-   let newGameText = document.createElement('p')
+   let newGameText = document.createElement('h2')
    newGameText.classList.add('new-game-text')
    newGameText.textContent = 'Game ends'
 
