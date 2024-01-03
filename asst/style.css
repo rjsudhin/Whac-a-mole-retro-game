@@ -72,7 +72,7 @@ body {
 }
 
 .square:hover {
-   box-shadow: 0 0 10px 3px rgb(201, 9, 34);
+   box-shadow: 0 0 10px 2px rgb(201, 9, 34);
 }
 
 .mole {
@@ -91,10 +91,24 @@ body {
 
 button {
    max-width: 450px;
-   width: 30%;
+   width: 150px;
    height: 3em;
    align-self: center;
    border-radius: 2em;
+}
+
+#start-btn {
+   background-color: rgb(126, 190, 219);
+   border: none;
+   color: #fff;
+   text-transform: uppercase;
+   font-family: Impact, sans-serif;
+   font-weight: bold;
+}
+
+#start-btn:hover {
+   cursor: pointer;
+   box-shadow: 0 0 25px 2px rgb(105, 178, 212);
 }
 
 
