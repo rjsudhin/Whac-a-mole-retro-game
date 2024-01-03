@@ -71,6 +71,7 @@ function makingResetGame() {
    //new game button
    let resetButton = document.createElement('button')
    resetButton.textContent = 'new Game'
+   resetButton.classList.add('reset-btn')
 
    // player scored points
    let pointText = document.createElement('p')
