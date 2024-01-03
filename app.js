@@ -4,7 +4,7 @@ const gameBody = document.querySelector('#game-body')
 const buttonContainer = document.querySelector('#button-container')
 
 // game display 
-let maxTime = 10
+let maxTime = 20
 let gameMaxTime = maxTime
 let gameScore = 0
 let displayCurrentScore
