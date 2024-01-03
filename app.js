@@ -119,7 +119,7 @@ function autoTimerLeft() {
 }
 
 function gamesMoveAuto() {
-   timerId = setInterval(randomSquareSelection, 1000)
+   timerId = setInterval(randomSquareSelection, 800)
    autoTimer = setInterval(autoTimerLeft, 1000)
 }
 
